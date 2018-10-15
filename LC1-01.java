@@ -3,9 +3,10 @@
 
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        if (nums.length == 0)
-            return nums;
-        int[] result = new int[]{0,0};
+        int[] result = new int[]{-1,-1};
+        if (nums.length < 2)
+            return result;
+        
         for (int i = 0; i < nums.length - 1; i++)
         {
             for (int j = i + 1; j < nums.length; j++)
