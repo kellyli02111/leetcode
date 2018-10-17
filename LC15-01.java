@@ -1,5 +1,5 @@
 // time: O(n^2)
-// time limit exceeded
+// time limit exceeded without removeDuplicates
 
 
 class Solution {
@@ -7,6 +7,7 @@ class Solution {
         List<List<Integer>> result = new ArrayList<>();
         if (nums.length < 3)
             return result;
+        nums = removeDuplicates(nums);
         for (int i = 0; i < nums.length; i++)
         {
             List<List<Integer>> pairs = new ArrayList<>();
@@ -51,6 +52,48 @@ class Solution {
             }
         }
         return result;
+    }
+    
+    public int[] removeDuplicates(int[] nums) {
+        if (nums.length == 0)
+            return nums;
+        Arrays.sort(nums);
+        List<Integer> newNums = new ArrayList<Integer>();
+        newNums.add(nums[0]);
+        int counter = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] != nums[i-1])
+            {
+                newNums.add(nums[i]);
+                counter = 1;
+            }
+            else
+            {
+                if (counter < 4)
+                {
+                    newNums.add(nums[i]);
+                    counter++;
+                }
+            }
+        }
+        int length = newNums.size();
+        int[] result = new int[length];
+        int j = 0;
+        for (int num: newNums) {
+            result[j] = num;
+            j++;
+        }
+        return result;
+    }
+    
+    
+    // print functions
+    public void printArray(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i]);
+            System.out.print(", ");
+        }
+        System.out.println();
     }
     public void printList(List<Integer> nums, int sum) {
         for (Integer num: nums) {
