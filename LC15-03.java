@@ -35,7 +35,7 @@ class Solution {
                 else
                 {
                     b++;
-                    while (nums[b - 1] == nums[b] && b < b)
+                    while (nums[b - 1] == nums[b] && b < c)
                         b++;
                 }
             }
