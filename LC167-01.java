@@ -1,4 +1,4 @@
-// time: O(log(n))
+// time: O(n)
 
 
 class Solution {
