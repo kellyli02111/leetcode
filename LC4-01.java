@@ -21,17 +21,13 @@ class Solution {
                 j++;
             }
         }
-        if (i < nums1.length) {
-            while (i < nums1.length) {
-                mergedNums.add(nums1[i]);
-                i++;
-            }
+        while (i < nums1.length) {
+            mergedNums.add(nums1[i]);
+            i++;
         }
-        if (j < nums2.length) {
-            while (j < nums2.length) {
-                mergedNums.add(nums2[j]);
-                j++;
-            }
+        while (j < nums2.length) {
+            mergedNums.add(nums2[j]);
+            j++;
         }
         
         int total = nums1.length + nums2.length;
