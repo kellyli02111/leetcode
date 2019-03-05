@@ -1,0 +1,41 @@
+// O(n^2)
+
+class Solution {
+    public int threeSumClosest(int[] nums, int target) {
+        int result = Integer.MAX_VALUE;
+        if (nums == null || nums.length < 3) {
+            return result;
+        }
+        int abs = Integer.MAX_VALUE;
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length - 2; i++) {
+            int j = i + 1;
+            int k = nums.length - 1;
+            while (j < k) {
+                int sum = nums[i] + nums[j] + nums[k];
+                if (sum == target) {
+                    return sum;
+                }
+                else {
+                    if (Math.abs(target - sum) <= abs) {
+                        abs = Math.abs(target - sum);
+                        result = sum;
+                    }
+                    if (sum < target) {
+                        j++;
+                        while (j < k && nums[j] == nums[j - 1]) {
+                            j++;
+                        }
+                    }
+                    else {
+                        k--;
+                        while (j < k && nums[k] == nums[k + 1]) {
+                            k--;
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
+}
