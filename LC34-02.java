@@ -1,4 +1,5 @@
 //O(log(n))
+//binary search
 
 class Solution {
     public int[] searchRange(int[] nums, int target) {
