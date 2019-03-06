@@ -1,4 +1,4 @@
-//O(n)?
+//O(n^2)
 
 class Solution {
     public int removeDuplicates(int[] nums) {
