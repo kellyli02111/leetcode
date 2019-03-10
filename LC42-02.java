@@ -1,5 +1,6 @@
 // time: O(n)
 // space: O(1)
+// two pointers
 
 class Solution {
     public int trap(int[] height) {
