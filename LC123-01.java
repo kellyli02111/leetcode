@@ -3,7 +3,9 @@
 
 class Solution {
     public int maxProfit(int[] prices) {
-        
+        if (prices.length <= 1) {
+            return 0;
+        }
         // local[i][j]: 到第i天发生最多j次交易所能得到的最大利润，并且最后一次交易必须在第i天卖
         int[][] local = new int[prices.length][3];
         // global[i][j]: 到第i天发生最多j次交易所能得到的最大利润，最后一次交易不一定在第i天卖
