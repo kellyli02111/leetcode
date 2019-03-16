@@ -14,7 +14,7 @@ class Solution {
             if (nums[i] == 1) {
                 hasOne = true;
             }
-            if (!set.contains(nums[i])) {
+            if (nums[i] > 0 && !set.contains(nums[i])) {
                 set.add(nums[i]);
             }
             if (nums[i] > max) {
@@ -26,7 +26,7 @@ class Solution {
         }
         positive = max;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] >= 1 && !set.contains(nums[i] + 1) && nums[i] < positive) {
+            if (nums[i] > 0 && !set.contains(nums[i] + 1) && nums[i] < positive) {
                 positive = nums[i];
             }
         }
