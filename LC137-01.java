@@ -1,6 +1,6 @@
 // time: O(n)
 // space: O(1)
-
+// bit manipulation
 
 class Solution {
     public int singleNumber(int[] nums) {
@@ -10,7 +10,7 @@ class Solution {
         int two = 0;
         int three = 0;
         for(int i = 0; i < nums.length; i++){
-            // three与上一轮结果无关，变向清零(无寄存)
+            // three与上一轮结果无关，变向清零(无寄存)，零时变量
             // 如果上一轮two为1， nums[i]出现第3次时，three被标记为1 （进位）
             three = two & nums[i];
             // two与上一轮结果相关，先不清零（有寄存）
